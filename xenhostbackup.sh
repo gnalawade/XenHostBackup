@@ -1,6 +1,6 @@
 #!/bin/sh
-backupdir="/mnt/nfs/KV-SRV01/"
 xenhostname=`xe host-list |grep name-label | awk '{print $4}'`
+backupdir=/mnt/nfs/$xenhostname
 daten=`date +%d-%m-%g`
 file_backup_name=$backupdir$xenhostname"-"$daten.xbk
 database_backup_name=$backupdir$xenhostname"-"$daten"-database-dump"
