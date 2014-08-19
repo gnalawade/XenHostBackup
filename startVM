@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# chkconfig: 345 99 01
+# description: start VM
+#startVM where name-label appliance 'startVM'
+sleep 60s
+for appuuid in $(xe appliance-list name-label=startVM |grep "uuid"|cut -c 31-) ; do
+	echo $appuuid
+	/opt/xensource/bin/xe appliance-start uuid=$appuuid > /var/log/xenbootscript.log 2>&1
+done
