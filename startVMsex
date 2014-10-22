@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# chkconfig: 345 99 01
+# description: start VM
+/etc/init.d/startVMe
