@@ -6,7 +6,7 @@ file_backup_name=$backupdir$xenhostname"-"$daten.xbk
 database_backup_name=$backupdir$xenhostname"-"$daten"-database-dump"
 metada_backup_name=$backupdir$xenhostname"-"$daten"-vm-metadata"
 #echo $file_backup_name
-mount -t nfs uds-srv03.sv.ua:/netbackup/XenServerHostBackup/ /mnt/nfs/
+mount -t nfs %servername%/netbackup/XenServerHostBackup/ /mnt/nfs/
 #
 xe host-backup host=$xenhostname file-name=$file_backup_name
 xe pool-dump-database file-name=$database_backup_name
